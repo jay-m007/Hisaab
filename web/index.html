@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#14213d">
+<title>Hisaab</title>
+<meta name="description" content="Monthly hisaab for household help: maid, milkman, newspaper, tiffin. Tick the days, get the bill, send it on WhatsApp. Runs in your browser; nothing is uploaded.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="6" width="44" height="52" rx="5" fill="currentColor"/><path d="M20 6v52" stroke="var(--margin)" stroke-width="3"/><path d="M27 22h20M27 32h20M27 42h14" stroke="var(--sheet)" stroke-width="3" stroke-linecap="round"/></svg>
+      <span>Hisaab</span>
+    </div>
+    <nav class="months" aria-label="Month">
+      <button id="prev" class="icon-btn" aria-label="Previous month">&#8249;</button>
+      <h2 id="monthLabel" aria-live="polite"></h2>
+      <button id="next" class="icon-btn" aria-label="Next month">&#8250;</button>
+      <button id="today" class="btn small">This month</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="summary" class="summary" aria-label="This month in total"></section>
+    <section id="helpers" class="helpers" aria-label="Your helpers"></section>
+    <section id="detail"></section>
+  </main>
+
+  <footer class="foot">
+    <div class="row">
+      <button id="exportBtn" class="btn small">Save a backup</button>
+      <label class="btn small file">Restore a backup<input id="importFile" type="file" accept="application/json,.json" hidden></label>
+      <button id="csvBtn" class="btn small">Month sheet (CSV)</button>
+      <button id="printBtn" class="btn small">Print</button>
+      <button id="eraseBtn" class="btn small danger">Erase everything</button>
+    </div>
+    <p id="saveNote" class="muted small"></p>
+    <p class="muted small">Your helpers, days and payments are saved only in this browser. Nothing is sent anywhere, so keep a backup if you change phones. Opening WhatsApp sends the message text only when you tap that button.</p>
+  </footer>
+</div>
+
+<dialog id="helperDialog" aria-labelledby="dlgTitle"><div id="dlgBody"></div></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
