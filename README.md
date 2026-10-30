@@ -2,7 +2,7 @@
 
 Monthly hisaab for the people who come to your home: the maid, the milkman, the newspaper, the tiffin. Tick the days they miss, and Hisaab works out the month's bill, so there is no more arguing over how many days it was.
 
-**Try it:** https://jay-m007.github.io/hisaab/
+**Try it:** https://jay-m007.github.io/Hisaab/
 
 | Start | The month | The bill and message |
 |---|---|---|
